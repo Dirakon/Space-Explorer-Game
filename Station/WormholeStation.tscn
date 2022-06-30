@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Station/BaseStation.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Station/station_6.png" type="Texture" id=2]
+
+[node name="WormholeStation" instance=ExtResource( 1 )]
+
+[node name="LandingArea" parent="." index="0"]
+dialog_lines = PoolStringArray( "ACCESSING THE LOCAL DATABASE...", " I finally found both the Clock and the Zeppelin again! ", "It took me analyzing the frequencies and creating a jump engine in my observatory, but now I can jump to the Clock at any time! ", "Furthermore, I will be upgrading the Zeppelin AI module, so I will never lose it again.", "It appears that the Clock got stuck around this strange wormhole seed. I can\'t say that I remember seeing it before...", "Now, the Clock moves in similar patterns but around the Wormhole! I wonder if I can get it back somehow. Moreover, maybe I can control where the Clock moves next\?" )
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 2 )
+
+[node name="LabelShowTrigger" parent="." index="2"]
+text = "Station
+APL3"

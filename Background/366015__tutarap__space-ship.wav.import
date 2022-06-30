@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/366015__tutarap__space-ship.wav-d400eca97110f4ed16bb15f8dfb701b5.sample"
+
+[deps]
+
+source_file="res://Background/366015__tutarap__space-ship.wav"
+dest_files=[ "res://.import/366015__tutarap__space-ship.wav-d400eca97110f4ed16bb15f8dfb701b5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://LandingArea/LandingArea.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30, 30 )
+
+[node name="LandingArea" type="Area2D"]
+monitorable = false
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "s"
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="LandingPoint" type="Node2D" parent="."]
+position = Vector2( 0, 19 )
+
+[connection signal="body_entered" from="." to="." method="_on_LandingArea_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_LandingArea_body_exited"]

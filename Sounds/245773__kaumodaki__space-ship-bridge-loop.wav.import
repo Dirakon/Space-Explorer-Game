@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/245773__kaumodaki__space-ship-bridge-loop.wav-0446709189d7f736be906a538177dca3.sample"
+
+[deps]
+
+source_file="res://Sounds/245773__kaumodaki__space-ship-bridge-loop.wav"
+dest_files=[ "res://.import/245773__kaumodaki__space-ship-bridge-loop.wav-0446709189d7f736be906a538177dca3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://nholes/tail.png" type="Texture" id=1]
+
+[node name="Tail" type="Node2D"]
+position = Vector2( 39, -37 )
+
+[node name="Tail" type="Sprite" parent="."]
+position = Vector2( 260, -10 )
+scale = Vector2( 1.41043, 1.3913 )
+texture = ExtResource( 1 )

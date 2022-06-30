@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/DialogBox/DialogBox.gd" type="Script" id=1]
+[ext_resource path="res://dpcomic.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[node name="DialogBox" type="Control"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -165.0
+script = ExtResource( 1 )
+visibility_change_speed = 0.8
+on_station_dialogs = [ PoolStringArray( "MARKING THE STATION...", "ACCESSING THE GLOBAL DATABASE...", "ERROR: GLOBAL DATABASE CAN NOT BE REACHED... " ), PoolStringArray( "MARKING THE STATION...", "ACCESSING THE GLOBAL DATABASE...", "This system is incredibly confusing at times. I will have to come up with some sort of navigation system.", "I picked four distinct stars, and I will be calling them north, east, south, and west." ), PoolStringArray( "MARKING THE STATION...", "ACCESSING THE GLOBAL DATABASE...", "The stations I build will serve as landmarks that help me navigate through this mess of a system.", "I swear, everything is either moving by itself or is moving me.", "I want to build a big observatory, that will help me observe the system at any time, mapping it for me.", "After some research, I can say that the best place for an observatory is right above the Maze, but for the life of me, I can not get there!" ), PoolStringArray( "MARKING THE STATION...", "ACCESSING THE GLOBAL DATABASE...", "At first, the Maze\'s fake part seemed like a perfect replica of the real part.", "They have identical sizes and shapes, but whatever is being emitted from the fake part is somehow being guided by the Clock.", "When the Clock says that it is 3 or 9, I swear, the particles of the fake part also align horizontally.", "However, I also noticed that particles are only emitted from the parts of the Maze that are responsible for teleporting my ship!", "Maybe, by examining the fake part at different Clock hours, I can find some sort of pattern..." ), PoolStringArray( "MARKING THE STATION...", "ACCESSING THE GLOBAL DATABASE...", "Somehow, when I was experimenting with the Clock, I lost both the Clock and the Zeppelin! ", "I left the Zeppelin on, and it drifted into the Clock while I was examining the object under the Clock\'s stable position.", "I guess I should be happy that I wasn\'t smashed into bits...", "How will I find my precious station again\? And the system\'s heart\?" ), PoolStringArray( "MARKING THE STATION...", "ACCESSING THE GLOBAL DATABASE...", "With the power of both the Observatory and my favorite station Zeppelin, I now feel like the owner of this system. ", "However, I still can not escape! My sensors indicate that there is another wormhole to the east, but the damn void does not let me pass through..." ), PoolStringArray( "MARKING THE STATION...", "ACCESSING THE GLOBAL DATABASE...", "Can things like the Clock even be natural\?", "This stable-unstable pattern is killing me!", "Both the thing under the Clock and the wormhole seed are bodies of the same kind.", "Why do they serve as a stable position\? Are there more bodies like that\?" ), PoolStringArray( "MARKING THE STATION...", "ACCESSING THE GLOBAL DATABASE...", "I solved it, I think.", "The clock will get me to the new wormhole, and I will finally be free.", "It is such a shame that I\'ll have to leave Zeppelin on this side...", "I don\'t know how self-sustainable my AI module is." ) ]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.396078, 0.376471, 0.376471, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+theme = SubResource( 1 )
+
+[node name="Label" type="Label" parent="MarginContainer"]
+margin_top = 56.0
+margin_right = 1004.0
+margin_bottom = 89.0
+theme = SubResource( 3 )
+autowrap = true

@@ -1,0 +1,422 @@
+[gd_scene load_steps=47 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://InvisibleWall/Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Background/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Station/EntranceStation.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/UI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://LabelShowTrigger/LabelShowTrigger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://InvisibleMaze/InvisibleMaze.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Meteorites/Meteorites.tscn" type="PackedScene" id=8]
+[ext_resource path="res://InvisibleMaze/FakeMazeArea.tscn" type="PackedScene" id=9]
+[ext_resource path="res://RotatingTeleporter/RotatingTeleporter.tscn" type="PackedScene" id=10]
+[ext_resource path="res://GravitatingBody/InitialBody.tscn" type="PackedScene" id=11]
+[ext_resource path="res://nholes/nhole34.png" type="Texture" id=12]
+[ext_resource path="res://Station/PreMazeStation.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Station/MovingStation.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Station/Observatory.tscn" type="PackedScene" id=15]
+[ext_resource path="res://nholes/nhole35.png" type="Texture" id=16]
+[ext_resource path="res://Station/UnderClock.gd" type="Script" id=17]
+[ext_resource path="res://GravitatingBody/InitialBodyDoubleRight.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Background/TheVoid.tscn" type="PackedScene" id=19]
+[ext_resource path="res://main_font.tres" type="DynamicFont" id=20]
+[ext_resource path="res://Station/HiddenStation.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Station/ClockStation.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Station/WormholeStation.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Station/TutorialStation.tscn" type="PackedScene" id=24]
+[ext_resource path="res://icon.png" type="Texture" id=25]
+[ext_resource path="res://Level/WormHoleTeleporter.gd" type="Script" id=26]
+[ext_resource path="res://Sounds/99431__robinhood76__01738-low-creepy-hole.wav" type="AudioStream" id=27]
+[ext_resource path="res://Sounds/568574__ericnorcross81__void-of-a-black-hole-fictional.mp3" type="AudioStream" id=28]
+[ext_resource path="res://Station/station_moving.png" type="Texture" id=29]
+[ext_resource path="res://Station/station_3.png" type="Texture" id=30]
+[ext_resource path="res://Station/station_6.png" type="Texture" id=31]
+[ext_resource path="res://nholes/nhole3.png" type="Texture" id=32]
+[ext_resource path="res://Background/meteor.png" type="Texture" id=33]
+[ext_resource path="res://Station/station_5.png" type="Texture" id=34]
+[ext_resource path="res://Station/station_1.png" type="Texture" id=35]
+[ext_resource path="res://Station/station_2.png" type="Texture" id=36]
+[ext_resource path="res://nhole2.png" type="Texture" id=37]
+[ext_resource path="res://nholes/the_void.png" type="Texture" id=38]
+[ext_resource path="res://Station/station_7.png" type="Texture" id=39]
+[ext_resource path="res://Station/station_4.png" type="Texture" id=40]
+[ext_resource path="res://nholes/tail.png" type="Texture" id=41]
+[ext_resource path="res://nholes/nhole.png" type="Texture" id=42]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0.0698324, 0.8625 ), 0.0, 0.0, 0, 0, Vector2( 0.949721, 0.144318 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0, 0, 0, 1, 0.67451, 0.196078, 0.196078, 0.360784 )
+
+[sub_resource type="Theme" id=3]
+default_font = ExtResource( 20 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 176, 595.5 )
+
+[node name="Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -24471, -600 )
+z_index = 2
+
+[node name="MovingStation" parent="." instance=ExtResource( 14 )]
+position = Vector2( 3774, 3918 )
+z_index = 1
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="WormHoleTrigger" parent="." instance=ExtResource( 6 )]
+scale = Vector2( -2.84604, 19.9941 )
+text = "The 
+Wormhole"
+
+[node name="Wall" parent="." instance=ExtResource( 2 )]
+position = Vector2( -16, -1254 )
+scale = Vector2( 2.42424, 11.9384 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="UI" parent="." instance=ExtResource( 5 )]
+
+[node name="Maze" parent="." instance=ExtResource( 7 )]
+position = Vector2( 4998, -1230 )
+scale = Vector2( 0.28, 0.28 )
+z_index = 2
+teleport_position_path = NodePath("../MazeTeleportPosition")
+
+[node name="MazeTeleportPosition" type="Node2D" parent="."]
+position = Vector2( 3875, 521 )
+z_index = 2
+
+[node name="FakeMazeArea" parent="MazeTeleportPosition" instance=ExtResource( 9 )]
+scale = Vector2( 0.27534, 0.27534 )
+
+[node name="InitialBody" parent="." instance=ExtResource( 11 )]
+position = Vector2( 4424, 2206 )
+scale = Vector2( 3.71155, 3.71155 )
+
+[node name="InitialBodyDoubleRight" parent="." instance=ExtResource( 18 )]
+position = Vector2( 138, 1151 )
+scale = Vector2( 3.39373, 3.39373 )
+
+[node name="InitialBody3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 11427, 941 )
+scale = Vector2( 1.76149, 1.76149 )
+force = 15.0
+
+[node name="MeteoriteWalls" type="Node2D" parent="."]
+
+[node name="MeteoriteWall" parent="MeteoriteWalls" instance=ExtResource( 8 )]
+position = Vector2( 9751, 3346 )
+
+[node name="MeteoriteWall2" parent="MeteoriteWalls" instance=ExtResource( 8 )]
+position = Vector2( 7873, -2181 )
+
+[node name="MeteoriteWall3" parent="MeteoriteWalls" instance=ExtResource( 8 )]
+position = Vector2( 15785, -2163 )
+
+[node name="MeteoriteWall5" parent="MeteoriteWalls" instance=ExtResource( 8 )]
+position = Vector2( 16607, 3346 )
+
+[node name="EntranceStation" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1797, 19 )
+
+[node name="Pre-MazeStation" parent="." instance=ExtResource( 13 )]
+position = Vector2( 5127, -879 )
+
+[node name="TutorialStation" parent="." instance=ExtResource( 24 )]
+position = Vector2( -23937, -1095 )
+
+[node name="HiddenStation" parent="." instance=ExtResource( 21 )]
+position = Vector2( 197, -3405 )
+
+[node name="ClockStation" parent="." instance=ExtResource( 22 )]
+position = Vector2( 3322, 1356 )
+
+[node name="WormholeStation" parent="." instance=ExtResource( 23 )]
+position = Vector2( 531, 1279 )
+
+[node name="Observatory" parent="." instance=ExtResource( 15 )]
+position = Vector2( 5084, -3576 )
+thing = NodePath("../Player")
+
+[node name="UnderClock" type="Node2D" parent="."]
+position = Vector2( 4429, 2190 )
+script = ExtResource( 17 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="UnderClock"]
+amount = 20
+emission_shape = 1
+emission_sphere_radius = 45.72
+spread = 64.84
+gravity = Vector2( 0, 0 )
+initial_velocity = 200.0
+scale_amount = 103.15
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="UnderClock"]
+position = Vector2( 84, 1 )
+texture = ExtResource( 16 )
+
+[node name="UnderClock2" type="Node2D" parent="."]
+position = Vector2( 127, 1148 )
+script = ExtResource( 17 )
+speed = 1.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="UnderClock2"]
+amount = 20
+emission_shape = 1
+emission_sphere_radius = 45.72
+spread = 64.84
+gravity = Vector2( 0, 0 )
+initial_velocity = 200.0
+scale_amount = 103.15
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="UnderClock2"]
+position = Vector2( 84, 1 )
+texture = ExtResource( 12 )
+
+[node name="RotatingTeleporter" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4431, 2192 )
+gravitating_bodies = [ NodePath("../InitialBody"), NodePath("../InitialBodyDoubleRight"), NodePath("../InitialBody3") ]
+
+[node name="VoidTrigger" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5891, 5226 )
+scale = Vector2( -21.9869, 4.25267 )
+text = "The 
+Void"
+
+[node name="VoidTrigger2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5911, -4007 )
+scale = Vector2( -25.5757, 4.43934 )
+text = "The 
+Void"
+
+[node name="Void" parent="." instance=ExtResource( 19 )]
+position = Vector2( 5591, 6288 )
+scale = Vector2( 4.36378, 3.84142 )
+z_index = 6
+
+[node name="Void2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 2734, 8041 )
+rotation = 0.682511
+z_index = 6
+
+[node name="Void3" parent="." instance=ExtResource( 19 )]
+position = Vector2( 5536, 7323 )
+rotation = -0.51286
+z_index = 6
+
+[node name="Void4" parent="." instance=ExtResource( 19 )]
+position = Vector2( 8389, 299 )
+rotation = -1.56747
+z_index = 6
+
+[node name="Void5" parent="." instance=ExtResource( 19 )]
+position = Vector2( 4339, -5222 )
+rotation = -3.15205
+z_index = 6
+
+[node name="Void6" parent="." instance=ExtResource( 19 )]
+position = Vector2( 2601, -6812 )
+rotation = -4.72461
+z_index = 6
+
+[node name="VoidTrigger3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 13991, -296 )
+scale = Vector2( -25.6557, 14.233 )
+text = "The 
+Void"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 12067.0
+margin_top = 588.0
+margin_right = 13025.0
+margin_bottom = 897.0
+rect_scale = Vector2( 2.09175, 2.10983 )
+theme = SubResource( 3 )
+text = "Thank you for playing the game
+(never could have guessed that anyone
+can actually make it this far)
+(unless you somehow brute-forced the thing?)
+(why did you finish this anyways. 
+this game is kinda bad, sorry)"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 11045.0
+margin_top = 626.0
+margin_right = 12003.0
+margin_bottom = 935.0
+rect_scale = Vector2( 2.09175, 2.10983 )
+theme = SubResource( 3 )
+text = "->
+->
+->
+->
+->
+->"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = -24973.0
+margin_top = -940.0
+margin_right = -24015.0
+margin_bottom = -631.0
+rect_scale = Vector2( 0.585318, 0.590377 )
+rect_pivot_offset = Vector2( 874.742, 304.89 )
+theme = SubResource( 3 )
+text = "Move with WASD"
+
+[node name="Label4" type="Label" parent="."]
+margin_left = -24348.0
+margin_top = -1025.0
+margin_right = -23390.0
+margin_bottom = -716.0
+rect_scale = Vector2( 0.585318, 0.590377 )
+rect_pivot_offset = Vector2( 874.742, 304.89 )
+theme = SubResource( 3 )
+text = "Press E here to embark on the station."
+
+[node name="Wall2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -19635, 111 )
+rotation = 1.5704
+scale = Vector2( 2.42424, 11.9384 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Wall3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -19559, -1183 )
+rotation = 1.5704
+scale = Vector2( 2.42424, 11.9384 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Wall4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -25020, -1116 )
+rotation = -0.00897336
+scale = Vector2( 2.42424, 11.9384 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Wall5" parent="." instance=ExtResource( 2 )]
+position = Vector2( -22518, -1192 )
+rotation = -0.00897336
+scale = Vector2( 2.42424, 11.9384 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite" type="Sprite" parent="Wall5"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -270.621, 28.2388 )
+scale = Vector2( 64.8769, 9.39054 )
+z_index = -7
+texture = ExtResource( 25 )
+
+[node name="WormHoleTeleporter" type="Area2D" parent="."]
+position = Vector2( -22856, -595 )
+script = ExtResource( 26 )
+teleport_position = NodePath("../TeleportPosition")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WormHoleTeleporter"]
+position = Vector2( 14, 16.5 )
+shape = SubResource( 4 )
+
+[node name="TeleportPosition" type="Node2D" parent="."]
+position = Vector2( 1310, 113 )
+
+[node name="WormHole" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -23722, -711 )
+stream = ExtResource( 27 )
+autoplay = true
+attenuation = 0.15932
+
+[node name="WormHole2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 791, 781 )
+stream = ExtResource( 27 )
+volume_db = 7.0
+autoplay = true
+attenuation = 0.143587
+
+[node name="Nhole2" type="Sprite" parent="WormHole2"]
+position = Vector2( 13675, -347 )
+texture = ExtResource( 37 )
+
+[node name="Nhole" type="Sprite" parent="WormHole2"]
+position = Vector2( 13665, 329 )
+texture = ExtResource( 42 )
+
+[node name="Tail" type="Sprite" parent="WormHole2"]
+position = Vector2( 13153, 767 )
+texture = ExtResource( 41 )
+
+[node name="TheVoid" type="Sprite" parent="WormHole2"]
+position = Vector2( 12326, 968 )
+texture = ExtResource( 38 )
+
+[node name="Nhole3" type="Sprite" parent="WormHole2"]
+position = Vector2( 12985, 773 )
+texture = ExtResource( 32 )
+
+[node name="Nhole34" type="Sprite" parent="WormHole2"]
+position = Vector2( 12945, 424 )
+texture = ExtResource( 12 )
+
+[node name="Nhole35" type="Sprite" parent="WormHole2"]
+position = Vector2( 13207, 417 )
+texture = ExtResource( 16 )
+
+[node name="Station1" type="Sprite" parent="WormHole2"]
+position = Vector2( 14279, -543 )
+texture = ExtResource( 35 )
+
+[node name="Station2" type="Sprite" parent="WormHole2"]
+position = Vector2( 14445, -281 )
+texture = ExtResource( 36 )
+
+[node name="Station3" type="Sprite" parent="WormHole2"]
+position = Vector2( 14626, -25 )
+texture = ExtResource( 30 )
+
+[node name="Station4" type="Sprite" parent="WormHole2"]
+position = Vector2( 14803, 231 )
+texture = ExtResource( 40 )
+
+[node name="Station5" type="Sprite" parent="WormHole2"]
+position = Vector2( 14963, 541 )
+texture = ExtResource( 34 )
+
+[node name="Station6" type="Sprite" parent="WormHole2"]
+position = Vector2( 15102, 829 )
+texture = ExtResource( 31 )
+
+[node name="Station7" type="Sprite" parent="WormHole2"]
+position = Vector2( 15283, 1064 )
+texture = ExtResource( 39 )
+
+[node name="StationMoving" type="Sprite" parent="WormHole2"]
+position = Vector2( 15305, 1438 )
+texture = ExtResource( 29 )
+
+[node name="Meteor" type="Sprite" parent="WormHole2"]
+position = Vector2( 11411, 870 )
+texture = ExtResource( 33 )
+
+[node name="Maze2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 4087, 101 )
+stream = ExtResource( 28 )
+volume_db = 13.0
+autoplay = true
+attenuation = 1.18921
+
+[node name="Maze3" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 5218, -1596 )
+stream = ExtResource( 28 )
+volume_db = 13.0
+autoplay = true
+attenuation = 1.18921
+
+[connection signal="body_entered" from="WormHoleTeleporter" to="WormHoleTeleporter" method="_on_WormHoleTeleporter_body_entered"]

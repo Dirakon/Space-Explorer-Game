@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/333515__oscaraudiogeek__flash-and-quicksilver.mp3-0ffd8e19d7a2671eb70d20c024771bae.mp3str"
+
+[deps]
+
+source_file="res://Sounds/333515__oscaraudiogeek__flash-and-quicksilver.mp3"
+dest_files=[ "res://.import/333515__oscaraudiogeek__flash-and-quicksilver.mp3-0ffd8e19d7a2671eb70d20c024771bae.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
