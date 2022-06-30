@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://LandingArea/LandingArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Station/MovingStation.gd" type="Script" id=2]
+[ext_resource path="res://LabelShowTrigger/LabelShowTrigger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Station/station_moving.png" type="Texture" id=4]
+[ext_resource path="res://Sounds/big_ship.mp3" type="AudioStream" id=5]
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0.0446927, 0.718182 ), 0.0, 0.0, 0, 0, Vector2( 0.899441, 0.227273 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0.170149, 1 )
+colors = PoolColorArray( 0.824219, 0.212494, 0.212494, 1, 1, 1, 1, 0 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 336.5, 142.5 )
+
+[node name="MovingStation" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2( -392, -13 )
+rotation = 1.58719
+amount = 30
+lifetime = 0.5
+local_coords = false
+emission_shape = 2
+emission_rect_extents = Vector2( 10, 1 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+scale_amount = 81.65
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 3 )
+
+[node name="LandingArea" parent="." instance=ExtResource( 1 )]
+position = Vector2( 13, -210 )
+scale = Vector2( 6.67844, 2.17073 )
+dialog_lines = PoolStringArray( "ACTIVATING Z3PPL1N...", "ACTIVATING AI MODULE...", "ERROR: AI MODULE NOT FOUND... ", "INITIATING MANUAL CONTROL...", "ACCESSING THE LOCAL DATABASE...", "Now I have a companion! ", "Zeppelin will be accompanying my main ship, and I will have proof that I am not crazy, and that everything is moving around here!", "Furthermore, the material I used to make this station should help withstand meteorites.", "I doubt that anything worth observing happens by the void, and I am already building the Observatory up there...", "But, just in case, after the Observatory, I\'ll place a station in this spot I found right above the local wormhole." )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3, -42 )
+texture = ExtResource( 4 )
+
+[node name="LabelShowTrigger" parent="." instance=ExtResource( 3 )]
+position = Vector2( -4.99994, 52 )
+scale = Vector2( 2.50126, 1.10556 )
+collision_layer = 1
+collision_mask = 1
+text = "Station
+Z3PPL1N"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -102.5, -11.5 )
+shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -15.0
+pitch_scale = 0.82

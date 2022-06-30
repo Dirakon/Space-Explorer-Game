@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sparky_-_Toi_encore_(encore).mp3-c728114623c1c573f65a906fa75af5d5.mp3str"
+
+[deps]
+
+source_file="res://Background/sparky_-_Toi_encore_(encore).mp3"
+dest_files=[ "res://.import/sparky_-_Toi_encore_(encore).mp3-c728114623c1c573f65a906fa75af5d5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GravitatingBody/InitialBody.tscn" type="PackedScene" id=1]
+
+[node name="InitialBodyDoubleRight" instance=ExtResource( 1 )]
+rotation_to_unstable_position = [ NodePath("Up"), NodePath("Right"), NodePath("Down"), NodePath("Right") ]

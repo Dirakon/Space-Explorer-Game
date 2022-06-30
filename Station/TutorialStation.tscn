@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Station/BaseStation.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Station/station_5.png" type="Texture" id=2]
+
+[node name="TutorialStation" instance=ExtResource( 1 )]
+
+[node name="LandingArea" parent="." index="0"]
+dialog_lines = PoolStringArray( "ACCESSING THE LOCAL DATABASE...", "What am I waiting for\?", "Here I am, in the middle of the wormhole, with no way back.", "And yet, for some strange reason, I wanted to place this station here...", "Since it is impossible for anyone else to reach this station, I have no clue why would I build it.", "Maybe it just eases me to know that, whatever is waiting for me on the other side, a piece of me will be safe in this little dark corridor." )
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 2 )
+
+[node name="LabelShowTrigger" parent="." index="2"]
+text = "A station?"

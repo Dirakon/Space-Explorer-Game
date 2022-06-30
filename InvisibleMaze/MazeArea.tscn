@@ -1,0 +1,103 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0.0160643, 0.718182 ), 0.0, 0.0, 0, 0, Vector2( 0.98996, 0.488636 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.110448, 0.301493, 0.459701, 0.932632 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.0626961, 0.00232208, 0.0534077, 0, 0.171143, 0.00633864, 0.145789, 0, 0.4375, 0.0529785, 0.375702, 1, 0.529412, 0.0196078, 0.45098, 0 )
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2( -11, -21 )
+polygon = PoolVector2Array( -842, 351, 227, 358, 128, -625, -286, -1252, -521, -1880, -257, -2742, 11, -3375, -1200, -3435 )
+
+[node name="Particles2D2" type="CPUParticles2D" parent="CollisionPolygon2D2"]
+position = Vector2( -640, -321 )
+rotation = -2.00469
+scale = Vector2( 7.06505, 20.3232 )
+amount = 30
+emission_shape = 2
+emission_rect_extents = Vector2( 100, 100 )
+spread = 0.0
+gravity = Vector2( 0, 100 )
+scale_amount = 37.53
+scale_amount_random = 0.28
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
+
+[node name="Particles2D3" type="CPUParticles2D" parent="CollisionPolygon2D2"]
+position = Vector2( -840, -2695 )
+rotation = -2.00469
+scale = Vector2( 7.06505, 20.3232 )
+amount = 30
+emission_shape = 2
+emission_rect_extents = Vector2( 100, 100 )
+spread = 0.0
+gravity = Vector2( 0, 100 )
+scale_amount = 37.53
+scale_amount_random = 0.28
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
+
+[node name="Particles2D6" type="CPUParticles2D" parent="CollisionPolygon2D2"]
+position = Vector2( -669, -1654 )
+rotation = -2.00469
+scale = Vector2( 7.06505, 20.3232 )
+amount = 30
+emission_shape = 2
+emission_rect_extents = Vector2( 100, 100 )
+spread = 0.0
+gravity = Vector2( 0, 100 )
+scale_amount = 37.53
+scale_amount_random = 0.28
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1257, -3068 )
+rotation = 3.14159
+polygon = PoolVector2Array( -842, 351, 227, 358, 128, -625, -286, -1252, -521, -1880, -257, -2742, 11, -3375, -1200, -3435 )
+
+[node name="Particles2D4" type="CPUParticles2D" parent="CollisionPolygon2D"]
+position = Vector2( -451, -44.0005 )
+rotation = 1.1369
+scale = Vector2( 7.06505, 20.3232 )
+amount = 30
+emission_shape = 2
+emission_rect_extents = Vector2( 100, 100 )
+spread = 0.0
+gravity = Vector2( 0, 100 )
+scale_amount = 37.53
+scale_amount_random = 0.28
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
+
+[node name="Particles2D5" type="CPUParticles2D" parent="CollisionPolygon2D"]
+position = Vector2( -763.993, -2710 )
+rotation = 1.1369
+scale = Vector2( 7.06505, 20.3232 )
+amount = 30
+emission_shape = 2
+emission_rect_extents = Vector2( 100, 100 )
+spread = 0.0
+gravity = Vector2( 0, 100 )
+scale_amount = 37.53
+scale_amount_random = 0.28
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
+
+[node name="Particles2D7" type="CPUParticles2D" parent="CollisionPolygon2D"]
+position = Vector2( -688.997, -1154 )
+rotation = 1.1369
+scale = Vector2( 7.06505, 20.3232 )
+amount = 30
+emission_shape = 2
+emission_rect_extents = Vector2( 100, 100 )
+spread = 0.0
+gravity = Vector2( 0, 100 )
+scale_amount = 37.53
+scale_amount_random = 0.28
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )

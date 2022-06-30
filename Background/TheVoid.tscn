@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://nholes/the_void.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.56381, 5.76836 )
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 4.26252, 4.26252 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 150, -208 )
+texture = ExtResource( 1 )
+offset = Vector2( -150, 208 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 639.996, -8.9149 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 16 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( -585.334, 10.3225 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Area2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -9.50136, 49.8531 )
+scale = Vector2( 123.262, 39.4709 )
+shape = SubResource( 1 )

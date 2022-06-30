@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/568574__ericnorcross81__void-of-a-black-hole-fictional.mp3-29ba4aad99b4918c043ac083f235d1e7.mp3str"
+
+[deps]
+
+source_file="res://Sounds/568574__ericnorcross81__void-of-a-black-hole-fictional.mp3"
+dest_files=[ "res://.import/568574__ericnorcross81__void-of-a-black-hole-fictional.mp3-29ba4aad99b4918c043ac083f235d1e7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

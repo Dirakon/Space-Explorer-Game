@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://InvisibleMaze/MazeArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://FakeMazeArea.gd" type="Script" id=2]
+
+[node name="FakeMazeArea" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+partice_systems = [ NodePath("CollisionPolygon2D2/Particles2D2"), NodePath("CollisionPolygon2D2/Particles2D3"), NodePath("CollisionPolygon2D2/Particles2D6"), NodePath("CollisionPolygon2D/Particles2D4"), NodePath("CollisionPolygon2D/Particles2D5"), NodePath("CollisionPolygon2D/Particles2D7") ]
